@@ -23,8 +23,6 @@ window.onload = function() {
         counterElement.innerText = count;
         count++;
         if (count > 100) {
-            
-            
             document.getElementById('buttonContainer').appendChild(button);
             document.getElementById('buttonContainer').appendChild(text1);
             button.addEventListener('click', event => accessGranted());
@@ -41,7 +39,7 @@ window.onload = function() {
       document.body.style.backgroundColor = 'lightblue'; // Change background color
     }
 
-    var slowIntervalId = setInterval(incrementCounterSlow, 60); // Slow count until 33
+    var slowIntervalId = setInterval(incrementCounterSlow, 6); // Slow count until 33
 
 
     // GETTING ACCESS 
@@ -51,7 +49,7 @@ window.onload = function() {
       let interval = null;
     
       setTimeout(() => {
-          const h1Element = document.querySelector("h1");
+          const h1Element = document.querySelector("a1");
           let iteration = 0;
       
           clearInterval(interval);
@@ -68,13 +66,50 @@ window.onload = function() {
                   .join("");
       
               if(iteration >= h1Element.dataset.value.length){ 
-                  h1Element.classList.add('blinking'); // change colour
+                //   h1Element.classList.add('blinking'); // change colour
                   clearInterval(interval);  
+                  accessGrantedh2();
               }
               iteration += 1 / 3;
           }, 40);
           
       }, 40);
+      
   }
+
+
+  function accessGrantedh2() {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let interval = null;
+  
+    setTimeout(() => {
+        const h1Element = document.querySelector("a1");
+        const h2Element = document.querySelector("a2");
+        let iteration = 0;
+    
+        clearInterval(interval);
+    
+        interval = setInterval(() => {
+            h2Element.innerText = h2Element.innerText
+                .split("")
+                .map((letter, index) => {
+                    if(index < iteration) {
+                        return h2Element.dataset.value[index];
+                    }
+                    return letters[Math.floor(Math.random() * 26)];
+                })
+                .join("");
+    
+            if(iteration >= h2Element.dataset.value.length){ 
+                h1Element.classList.add('blinking');
+                h2Element.classList.add('blinking'); // change colour
+                clearInterval(interval);  
+                }
+            iteration += 1 / 3;
+            }, 40);
+        
+        }, 40);
+    }
  
 }
+
