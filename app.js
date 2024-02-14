@@ -68,7 +68,7 @@ window.onload = function() {
               if(iteration >= h1Element.dataset.value.length){ 
                 //   h1Element.classList.add('blinking'); // change colour
                   clearInterval(interval);  
-                  //accessGrantedh2();
+                  accessGrantedh2();
               }
               iteration += 1 / 3;
           }, 40);
