@@ -31,34 +31,45 @@ body {
 
 .center {
   position: absolute;
-  height: 300px;
+  width: clamp(300px, 500px, 600px); /* Dynamically adjust width */
+  height: auto; /* Dynamically adjust height */
+  aspect-ratio: 4 / 2;
+  /* bottom: clamp(70vh, 60vh, 100vh); */
+  /* height: 300px;
   width: 50vh;
-  bottom: 0px;
+  bottom: 0px; */
   left: 50%;
   right: 50%;
-  transform: translate(-50%, -50%);
-  margin-bottom: -2vh;
+  transform: translate(-50%, 50%);
+  bottom: clamp(25vh, 30vw, 40vh);
   display: flex; /* Use flexbox */
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* background-color: #000; */
 }
 
 .center h1 {
   position: fixed;
+  margin-top: auto;
+  /* position: fixed; */
+  top: 66%; /* Adjust as needed */
+  /* height: clamp(60px, 7vw, 120px); */
+  height: auto;
+  width: clamp(100px, 400px, 620px);
+  aspect-ratio: 8 / 1;
   font-family: 'Space Mono', monospace;
   font-size: 50px;
-  color: black;
+  font-size: clamp(20px, 51px, 100px);
+  color: rgb(0, 0, 0);
   background-color: white;
   padding: 0rem clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
-  top: 70%;
-  width: 385px;
-  left: 50%;
-  right: 50%;
-  transform: translate(-50%, -50%);
-  justify-content: center;
-  align-items: center;
+  /* left: 50%;
+  right: 50%; */
+  text-align: center;
+  /* transform: translate(-50%, -50%);
+  justify-content: center; */
   
 }
 
@@ -86,11 +97,11 @@ button {
   position: fixed;
   background-color: white;
   color: black;
-  width: 40px;
-  height: 40px;
+  width: clamp(40px, 5vw, 60px); /* Adjust as needed */
+  height: clamp(40px, 5vw, 60px);
   padding: 10px;
   font-size: 16px;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: none;
@@ -108,50 +119,58 @@ button:hover {
 }
 
 #buttonContainer {
-  height: 10px;
+  position: absolute;
+  width: clamp(100px, 100px, 200px);
+  height: 53px;
   width: 120px;
 }
 
 #buttonContainer h4 {
   font-size: 15px;
   width: auto;
-  bottom: 100%;
   color: white;
   font-family: 'Seven Segment', sans-serif;
   text-align: center;
 }
 
 .loading {
-  position: fixed;
-  top: 20%;
+  position: absolute;
+  margin-top: auto;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 235px;
-  height: 70px;
+  width: clamp(2px, 200px, 450px);
+  height: auto;
+  /* height: clamp(60px, 15.3vw, 120px); */
+  aspect-ratio: 466 / 120;
   font-family: 'Seven Segment', sans-serif;
   text-align: center;
   background: url('images/Loading_frame/Vector.png');
   background-size: cover;
-  padding: 0 clamp(1rem, 2vw, 3rem);
+  /* padding: 0 clamp(1rem, 2vw, 3rem); */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  /* background-color: chocolate; */
+  z-index: 0;
+  /* font-size: clamp(10px, 13px, 100px); */
 }
 
 .loading h2{
-  font-size: 44px;
-  margin-right: 10px;
+  position: relative;
+  font-size: 16px;
   color: white;
   text-shadow: 
         -1px -1px 0 #000,  
          1px -1px 0 #000,
         -1px  1px 0 #000,
          1px  1px 0 #000;
+  
 }
 
 .loading h3{
-  font-size: 44px;
+  font-size: 16px; 
   color: white;
   text-shadow: 
         -1px -1px 0 #000,  
