@@ -78,37 +78,3 @@ window.onload = function() {
   }
  
 }
-
-
-
-
-/*function accessGranted() {
-  const letters = "01010101";
-
-  let interval = null;
-  
-  setTimeout(() => {
-      const h1Element = document.querySelector("h1");
-      let iteration = 0;
-  
-      clearInterval(interval);
-  
-      interval = setInterval(() => {
-          h1Element.innerText = h1Element.innerText
-              .split("")
-              .map((letter, index) => {
-                  if(index < iteration) {
-                      return h1Element.dataset.value[index];
-                  }
-                  return letters[Math.floor(Math.random() * 8)];
-              })
-              .join("");
-  
-          if(iteration >= h1Element.dataset.value.length){ 
-              h1Element.classList.add('blinking'); // change colour
-              clearInterval(interval);  
-          }
-          iteration += 1 / 3;
-      }, 100);
-      
-  }, 80);}*/
