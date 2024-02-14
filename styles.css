@@ -1,0 +1,162 @@
+@import url('https://fonts.cdnfonts.com/css/seven-segment');
+
+body {
+  background-image: url('images/2x.png');
+  background-size: auto 100%;
+  /* background-size: 100vh; */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 100%;
+}
+
+
+#image {
+  position: fixed;
+  border-radius: 165px;
+  top: 20px;
+  left: 5px;
+  width: 330px;
+  height: auto;
+}
+
+.gif_container {
+  position: fixed;
+  width: 200px;
+  border-radius: 150px;
+}
+
+
+.center {
+  position: absolute;
+  height: 300px;
+  width: 50vh;
+  bottom: 0px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: -2vh;
+  display: flex; /* Use flexbox */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center h1 {
+  position: fixed;
+  font-family: 'Space Mono', monospace;
+  font-size: 50px;
+  color: black;
+  background-color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  top: 70%;
+  width: 385px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/*.center h1:hover {
+  background-color: white;
+  color: black;
+}*/
+
+.blinking {
+animation: greenBlink 800ms 4;
+animation-delay: 400ms;
+animation-timing-function: ease-in-out;
+}
+
+@keyframes greenBlink {
+0% {color: white; 
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+100% {color: rgb(6, 214, 6);
+  text-shadow: -1px 0 rgb(6, 214, 6), 0 1px rgb(6, 214, 6), 1px 0 rgb(6, 214, 6), 0 -1px rgb(6, 214, 6);
+}
+}
+
+button {
+  position: fixed;
+  background-color: white;
+  color: black;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 0 3px black, 0 0 0 4px white;
+  background-image: url('images/ninja_icon.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+button:hover {
+  filter: invert(100%);
+}
+
+#buttonContainer {
+  height: 10px;
+  width: 120px;
+}
+
+#buttonContainer h4 {
+  font-size: 15px;
+  width: auto;
+  bottom: 100%;
+  color: white;
+  font-family: 'Seven Segment', sans-serif;
+  text-align: center;
+}
+
+.loading {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 235px;
+  height: 70px;
+  font-family: 'Seven Segment', sans-serif;
+  text-align: center;
+  background: url('images/Loading_frame/Vector.png');
+  background-size: cover;
+  padding: 0 clamp(1rem, 2vw, 3rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading h2{
+  font-size: 44px;
+  margin-right: 10px;
+  color: white;
+  text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+.loading h3{
+  font-size: 44px;
+  color: white;
+  text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+
+}
