@@ -6,6 +6,7 @@ window.onload = function() {
 
     var button = document.createElement('button');
     var text1 = document.createElement('h4')
+    text1.id = 'buttonText';
     text1.textContent = 'Click to get Access';
     // button.textContent = 'Click to unlock';
 
@@ -26,7 +27,18 @@ window.onload = function() {
             document.getElementById('buttonContainer').appendChild(button);
             document.getElementById('buttonContainer').appendChild(text1);
             button.addEventListener('click', event => accessGranted());
+
+            
             clearInterval(fastIntervalId);
+
+            setTimeout(() => {
+                // document.getElementById('buttonText'), animateTextColors();
+                document.getElementById('buttonText'), animateButtonText();
+
+            }, 200);
+
+            // document.getElementById('buttonText').addEventListener('click', animateButtonText);
+
         }
     }
 
@@ -113,3 +125,56 @@ window.onload = function() {
  
 }
 
+
+// TYPING ANIMATION 
+
+function animateButtonText() {
+    const h1 = document.getElementById('buttonText');
+    let text = h1.innerText;
+    h1.innerHTML = ""; // Clear the text initially
+  
+    // Function to create and return a span element for a character
+    function createCharacterSpan(character, delay) {
+      const span = document.createElement('span');
+      span.textContent = character;
+      if (character !== ' ') { // Check if the character is not a space
+        span.style.opacity = "0"; // Start with character hidden
+        setTimeout(() => {
+          span.style.opacity = "1"; // Make character visible
+          span.style.color = `white`; // Change color to white
+        }, delay);
+      }
+      return span;
+    }
+  
+    // Add each character with a delay increasing from left to right
+    Array.from(text).forEach((char, index) => {
+      if (char == " ") {
+        const spaceSpan = document.createElement('span');
+        spaceSpan.innerHTML = "&ensp;"; // Use HTML entity for space
+        h1.appendChild(spaceSpan);
+      }
+      
+      else {
+
+      
+        const delay = index * 50 + Math.random() * 80; // Adjust the delay here
+        const charSpan = createCharacterSpan(char, delay);
+        // console.log(charSpan);
+        h1.appendChild(charSpan);
+      }
+    });
+  }
+  
+  
+setTimeout(() => {
+  const elements = document.querySelectorAll('.access a2'); // Select all .access a2 elements
+  elements.forEach(element => {
+    // Remove existing animation properties
+    element.style.animation = '';
+    element.style.animationFillMode = '';
+    
+    // Then add the .blinking class
+    element.classList.add('blinking');
+  });
+}, 400);
