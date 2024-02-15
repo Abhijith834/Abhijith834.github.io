@@ -29,36 +29,73 @@ body {
 
 .access {
   position: fixed;
-  margin-top: auto;
-  bottom: 0%;
-  height: auto;
-  width: 200px;
-  aspect-ratio: 8 / 1;
+  margin: auto;
+  top: 60%;
+  /* bottom: 0%; */
+  width: 0;
+  height: 0;
+  opacity: 0;
+  animation: access 1000ms 1 ;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
+  /* aspect-ratio: 8 / 1; */
   background-color: white;
-  padding: 0rem clamp(1rem, 2vw, 3rem);
-  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  padding: 20px;
+  border-radius: 7px;
   text-align: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
+@keyframes access {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 100%;
+  }
+
+  100% {
+    width: 200px;
+    height: 100px;
+    opacity: 100%;
+  }
+}
+
 .access a1 {
   font-family: 'Space Mono', monospace;
-  font-size: 50px;
-  color: rgb(0, 0, 0);
+  animation: accessText 1000ms 1;
+  animation-delay: 200ms;
+  font-size: 0;
+  animation-fill-mode: forwards;
+  top: 100%;
   margin: 0;
   font-weight: 900;
 }
 
 .access a2 {
   font-family: 'Space Mono', monospace;
-  font-size: 50px;
-  color: rgb(0, 0, 0);
+  font-size: 0;
+  top: 100%;
+  animation: accessText 1000ms 1;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
   margin: 0;
   font-weight: 900;
+  
 }
 
+@keyframes accessText {
+  0% {
+    font-size: 0;
+    color: transparent;
+  }
+  100% {
+    font-size: 50px;
+    color: black;
+  }
+
+}
 
 .blinking {
 animation: greenBlink 600ms 4;
@@ -87,6 +124,7 @@ button {
   padding: 10px;
   font-size: 16px;
   top: 35%;
+
   border: none;
   cursor: pointer;
   outline: none;
@@ -101,22 +139,31 @@ button {
   right: 38%;
 }
 
+#colorfulText h1{
 
+  color: transparent;
+}
 
 #buttonContainer {
-  position: absolute;
+  position: relative;
   height: 120px;
   width: 120px;
 }
 
-#buttonContainer h4 {
-  position: fixed;
-  top: 37%;
+#buttonText {
+  position: relative;
+  top: 10%;
   font-size: 20px;
+  height: 44px;
   width: 120px;
-  color: white;
+  color: rgba(0, 0, 0, 0);
   font-family: 'Seven Segment', sans-serif;
   text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
 @keyframes button {
@@ -177,3 +224,10 @@ button {
          1px  1px 0 #000;
   
 }
+
+
+
+
+
+
+
