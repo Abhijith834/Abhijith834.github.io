@@ -1,0 +1,423 @@
+@import url('https://fonts.cdnfonts.com/css/seven-segment');
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+body {
+  background: url('images/2x.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+
+.intro {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  z-index: 2;
+}
+
+.intro img {
+  width: 150px;
+  height: auto;
+}
+
+
+.center {
+  position: absolute;
+  width: 80vw;
+  height: auto;
+  aspect-ratio: 2 / 2;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%);
+  bottom: clamp(25vh, 30vw, 40vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.access {
+  z-index: 100;
+  position: fixed;
+  margin: auto;
+  top: 60%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  animation: access 1000ms 1;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
+  border: 1px solid white;
+  filter: drop-shadow(2px 4px 6px black);
+  background-color: rgba(152, 151, 151, 0.00001);
+  padding: 20px;
+  border-radius: 7px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .access {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(3px);
+    border-color: white;
+}
+
+@keyframes access {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 100%;
+  }
+
+  100% {
+    width: 200px;
+    height: 100px;
+    opacity: 100%;
+  }
+}
+}
+
+.access a1 {
+  z-index: 100;
+  font-family: 'Space Mono', monospace;
+  animation: accessText 1000ms 1;
+  animation-delay: 200ms;
+  font-size: 0;
+  animation-fill-mode: forwards;
+  top: 100%;
+  margin: 0;
+  font-weight: 900;
+}
+
+.access a2 {
+  z-index: 100;
+  font-family: 'Space Mono', monospace;
+  font-size: 0;
+  top: 100%;
+  animation: accessText 1000ms 1;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
+  margin: 0;
+  font-weight: 900;
+}
+
+@keyframes accessText {
+  0% {
+    font-size: 0;
+    color: transparent;
+  }
+  100% {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+  }
+
+}
+
+.blinking {
+animation: greenBlink 600ms 4;
+animation-delay: 400ms;
+animation-timing-function: ease-in-out;
+}
+
+@keyframes greenBlink {
+0% {color: white; 
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+100% {color: rgb(6, 214, 6);
+  text-shadow: -1px 0 rgb(6, 214, 6), 0 1px rgb(6, 214, 6), 1px 0 rgb(6, 214, 6), 0 -1px rgb(6, 214, 6);
+  }
+}
+
+button {
+  z-index: 100;
+  animation: button 160ms 1;
+  animation-timing-function: ease-in;
+  position: fixed;
+  background-color: white;
+  color: black;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  top: 35%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transform: translate(-50%, -50%);
+  border: none;
+  box-shadow: 0 0 0 3px black, 0 0 0 4px white;
+  background-image: url('images/ninja_icon.png');
+  background-size: cover;
+  background-position: center;
+  transform-origin: center bottom;
+  right: 38%;
+}
+
+#colorfulText h1{
+  color: transparent;
+}
+
+#buttonContainer {
+  position: relative;
+  height: 120px;
+  width: 120px;
+}
+
+#buttonText {
+  position: relative;
+  top: 10%;
+  font-size: 20px;
+  height: 44px;
+  width: 120px;
+  color: rgba(0, 0, 0, 0);
+  font-family: 'Seven Segment', sans-serif;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+@keyframes button {
+  0% {transform-origin: center top;
+    transform: perspective(0.8rem) rotateX(-20deg);
+    right: 44%;
+    opacity: 0%;
+  }
+
+  100% {
+    transform-origin: center bottom;
+    right: 38%;
+    opacity: 100%;
+  }
+}
+
+ .loading {
+  z-index: 100;
+  position: fixed;
+  top: 2%;
+  width: 271px;
+  height: 70px;
+  font-family: 'Seven Segment', sans-serif;
+  text-align: center;
+  background: url('images/Loading_frame/Vector.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+
+.loading h2, h3{
+  z-index: 100;
+  margin: 0;
+  position: relative;
+  font-size: 39px;
+  color: white;
+  text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @import url('https://fonts.cdnfonts.com/css/seven-segment');
+
+body {
+  background-image: url('images/2x.png');
+  background-size: auto 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  opacity: 100%;
+}
+
+
+#image {
+  position: fixed;
+  border-radius: 165px;
+  top: 20px;
+  left: 5px;
+  width: 330px;
+  height: auto;
+}
+
+.gif_container {
+  position: fixed;
+  width: 200px;
+  border-radius: 150px;
+}
+
+
+.center {
+  position: absolute;
+  width: clamp(300px, 500px, 600px);
+  height: auto;
+  aspect-ratio: 4 / 2;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, 50%);
+  bottom: clamp(25vh, 30vw, 40vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center h1 {
+  position: fixed;
+  margin-top: auto;
+  top: 66%;
+  height: auto;
+  width: clamp(100px, 400px, 620px);
+  aspect-ratio: 8 / 1;
+  font-family: 'Space Mono', monospace;
+  font-size: 50px;
+  font-size: clamp(20px, 51px, 100px);
+  color: rgb(0, 0, 0);
+  background-color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  text-align: center;
+
+}
+
+.blinking {
+animation: greenBlink 800ms 4;
+animation-delay: 400ms;
+animation-timing-function: ease-in-out;
+}
+
+@keyframes greenBlink {
+0% {color: white; 
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+100% {color: rgb(6, 214, 6);
+  text-shadow: -1px 0 rgb(6, 214, 6), 0 1px rgb(6, 214, 6), 1px 0 rgb(6, 214, 6), 0 -1px rgb(6, 214, 6);
+}
+}
+
+button {
+  position: fixed;
+  background-color: white;
+  color: black;
+  width: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 60px);
+  padding: 10px;
+  font-size: 16px;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 0 3px black, 0 0 0 4px white;
+  background-image: url('images/ninja_icon.png');
+  background-size: cover;
+  background-position: center;
+}
+
+
+button:hover {
+  filter: invert(100%);
+}
+
+#buttonContainer {
+  position: absolute;
+  width: clamp(100px, 100px, 200px);
+  height: 53px;
+  width: 120px;
+}
+
+#buttonContainer h4 {
+  font-size: 15px;
+  width: auto;
+  color: white;
+  font-family: 'Seven Segment', sans-serif;
+  text-align: center;
+}
+
+.loading {
+  position: absolute;
+  margin-top: auto;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(2px, 200px, 450px);
+  height: auto;
+  aspect-ratio: 466 / 120;
+  font-family: 'Seven Segment', sans-serif;
+  text-align: center;
+  background: url('images/Loading_frame/Vector.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+.loading h2{
+  position: relative;
+  font-size: 16px;
+  color: white;
+  text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+  
+}
+
+.loading h3{
+  font-size: 16px; 
+  color: white;
+  text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+
+} */
