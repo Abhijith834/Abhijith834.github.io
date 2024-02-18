@@ -89,8 +89,8 @@ body {
   }
 
   100% {
-    width: 200px;
-    height: 100px;
+    width: 44vw;
+    height: 20vw;
     opacity: 100%;
   }
 }
@@ -126,7 +126,7 @@ body {
     color: transparent;
   }
   100% {
-    font-size: 50px;
+    font-size: 12vw;
     color: rgb(255, 255, 255);
   }
 
@@ -154,8 +154,8 @@ button {
   position: absolute; /* Changed position to absolute */
   background-color: white;
   color: black;
-  width: 40px;
-  height: 40px;
+  width: 12vw;
+  height: 12vw;
   padding: 10px;
   font-size: 16px;
   top: 5%; /* Position from the top of the container */
@@ -183,8 +183,8 @@ button {
 
 #buttonText {
   position: relative;
-  top: 20%;
-  font-size: 20px;
+  top: 18%;
+  font-size: 6vw;
   height: 44px;
   width: 120px;
   color: rgba(0, 0, 0, 0);
@@ -210,9 +210,10 @@ button {
  .loading {
   z-index: 100;
   position: fixed;
-  top: 2%;
-  width: 271px;
-  height: 70px;
+  top: -10%;
+  width: 70vw;
+  height: auto;
+  aspect-ratio: 271 / 70;
   font-family: 'Seven Segment', sans-serif;
   text-align: center;
   background: url('images/Loading_frame/Vector.png');
@@ -229,7 +230,7 @@ button {
   z-index: 100;
   margin: 0;
   position: relative;
-  font-size: 39px;
+  font-size: 10vw;
   color: white;
   text-shadow: 
         -1px -1px 0 #000,  
@@ -251,7 +252,7 @@ button {
 
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 350px) {
   body {
     margin: 0;
     padding: 0;
@@ -296,7 +297,260 @@ button {
     left: 50%;
     right: 50%;
     transform: translate(-50%, 50%);
-    bottom: 35vw;
+    bottom: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .access {
+    z-index: 100;
+    position: fixed;
+    margin: auto;
+    top: 70%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    animation: access 1000ms 1;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+    border: 1px solid white;
+    filter: drop-shadow(2px 4px 6px black);
+    background-color: rgba(152, 151, 151, 0.00001);
+    padding: 20px;
+    border-radius: 7px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .access {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(3px);
+      border-color: white;
+  }
+  
+  @keyframes access {
+    0% {
+      width: 0vw;
+      height: 0vw;
+      opacity: 0%;
+    }
+  
+    100% {
+      width: 44vw;
+      height: 20vw;
+      opacity: 100%;
+    }
+  }
+  }
+  
+  .access a1 {
+    z-index: 100;
+    font-family: 'Space Mono', monospace;
+    animation: accessText 1000ms 1;
+    animation-delay: 200ms;
+    font-size: 0;
+    animation-fill-mode: forwards;
+    top: 100%;
+    margin: 0;
+    font-weight: 900;
+  }
+  
+  .access a2 {
+    padding-left: 2vw;
+    z-index: 100;
+    font-family: 'Space Mono', monospace;
+    font-size: 0;
+    top: 100%;
+    animation: accessText 1000ms 1;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+    margin: 0;
+    font-weight: 900;
+  }
+  
+  @keyframes accessText {
+    0% {
+      font-size: 0;
+      color: transparent;
+    }
+    100% {
+      font-size: 11vw;
+      color: rgb(255, 255, 255);
+    }
+  
+  }
+  
+  .blinking {
+  animation: greenBlink 600ms 4;
+  animation-delay: 400ms;
+  animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes greenBlink {
+  0% {color: white; 
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+  100% {color: rgb(6, 214, 6);
+    text-shadow: -1px 0 rgb(6, 214, 6), 0 1px rgb(6, 214, 6), 1px 0 rgb(6, 214, 6), 0 -1px rgb(6, 214, 6);
+    }
+  }
+  
+  button {
+    z-index: 100;
+    animation: button 160ms 1;
+    animation-timing-function: ease-in;
+    position: absolute; /* Change to relative positioning */
+    background-color: white;
+    color: black;
+    width: 8vw;
+    height: 8vw;
+    padding: 10px;
+    font-size: 16px;
+    top: 0; /* Remove top positioning */
+    right: 50%;
+    left: 50%; /* Position button at horizontal center */
+    transform: translateX(-50%, -50%); /* Center button horizontally */
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 0 3px black, 0 0 0 4px white;
+    background-image: url('images/ninja_icon.png');
+    background-size: cover;
+    background-position: center;
+    transform-origin: center bottom;
+  }
+  
+  #buttonContainer {
+    position: relative;
+    height: 20vw;
+    width: 30vw;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #buttonText {
+    position: relative;
+    top: 6vw;
+    font-size: 4vw;
+    height: 10vw;
+    width: 20vw;
+    color: rgba(0, 0, 0, 0);
+    font-family: 'Seven Segment', sans-serif;
+    text-align: center;
+
+  
+  }
+  
+  @keyframes button {
+    0% {transform-origin: center top;
+      transform: perspective(0.8rem) rotateX(-20deg);
+      /* right: 44%; */
+      opacity: 0%;
+    }
+  
+    100% {
+      transform-origin: center bottom;
+      /* right: 38%; */
+      opacity: 100%;
+    }
+  }
+  
+   .loading {
+    z-index: 100;
+    position: fixed;
+    top: 1%;
+    width: 60vw;
+    height: auto;
+    aspect-ratio: 271 / 70;
+    font-family: 'Seven Segment', sans-serif;
+    text-align: center;
+    background: url('images/Loading_frame/Vector.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  }
+  
+  
+  .loading h2, h3{
+    z-index: 100;
+    margin: 0;
+    position: relative;
+    font-size: 8vw;
+    color: white;
+    text-shadow: 
+          -1px -1px 0 #000,  
+           1px -1px 0 #000,
+          -1px  1px 0 #000,
+           1px  1px 0 #000;
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  body {
+    background: url('images/2x.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  
+  
+  .intro {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 2;
+  }
+  
+  .intro img {
+    width: 150px;
+    height: auto;
+  }
+  
+  
+  .center {
+    position: absolute;
+    width: 60vw;
+    height: auto;
+    aspect-ratio: 2 / 2;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    bottom: 28vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -341,8 +595,8 @@ button {
     }
   
     100% {
-      width: 66vw;
-      height: 10vw;
+      width: 46vw;
+      height: 7vw;
       opacity: 100%;
     }
   }
@@ -379,7 +633,7 @@ button {
       color: transparent;
     }
     100% {
-      font-size: 9vw;
+      font-size: 6vw;
       color: rgb(255, 255, 255);
     }
   
@@ -407,8 +661,8 @@ button {
     position: absolute; /* Change to relative positioning */
     background-color: white;
     color: black;
-    width: 7vw;
-    height: 7vw;
+    width: 6vw;
+    height: 6vw;
     padding: 10px;
     font-size: 16px;
     top: 0; /* Remove top positioning */
@@ -438,7 +692,7 @@ button {
   #buttonText {
     position: relative;
     top: 4vw;
-    font-size: 3vw;
+    font-size: 2.8vw;
     height: 10vw;
     width: 20vw;
     color: rgba(0, 0, 0, 0);
@@ -465,8 +719,8 @@ button {
    .loading {
     z-index: 100;
     position: fixed;
-    top: 2%;
-    width: 50vw;
+    top: 12%;
+    width: 37vw;
     height: auto;
     aspect-ratio: 271 / 70;
     font-family: 'Seven Segment', sans-serif;
@@ -485,7 +739,7 @@ button {
     z-index: 100;
     margin: 0;
     position: relative;
-    font-size: 7vw;
+    font-size: 5vw;
     color: white;
     text-shadow: 
           -1px -1px 0 #000,  
@@ -742,6 +996,257 @@ button {
     margin: 0;
     position: relative;
     font-size: 3vw;
+    color: white;
+    text-shadow: 
+          -1px -1px 0 #000,  
+           1px -1px 0 #000,
+          -1px  1px 0 #000,
+           1px  1px 0 #000;
+    
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 2000px) {
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  #bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  body {
+    background: url('images/2x.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  
+  
+  .intro {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 2;
+  }
+  
+  .intro img {
+    width: 150px;
+    height: auto;
+  }
+  
+  
+  .center {
+    position: absolute;
+    width: 35vw;
+    height: auto;
+    aspect-ratio: 2 / 2;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    bottom: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .access {
+    z-index: 100;
+    position: fixed;
+    margin: auto;
+    top: 37%;
+    width: 10vw;
+    height: 0;
+    opacity: 0;
+    animation: access 1000ms 1;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+    border: 1px solid white;
+    filter: drop-shadow(2px 4px 6px black);
+    background-color: rgba(152, 151, 151, 0.00001);
+    padding: 20px;
+    border-radius: 7px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .access {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(3px);
+      border-color: white;
+  }
+  
+  @keyframes access {
+    0% {
+      width: 0vw;
+      height: 0vw;
+      opacity: 0%;
+    }
+  
+    100% {
+      width: 16vw;
+      height: 2.4vw;
+      opacity: 100%;
+    }
+  }
+  }
+  
+  .access a1 {
+    z-index: 100;
+    font-family: 'Space Mono', monospace;
+    animation: accessText 1000ms 1;
+    animation-delay: 200ms;
+    font-size: 2vw;
+    animation-fill-mode: forwards;
+    top: 100%;
+    margin: 0;
+    font-weight: 900;
+  }
+  
+  .access a2 {
+    padding-left: 1vw;
+    z-index: 100;
+    font-family: 'Space Mono', monospace;
+    font-size: 2vw;
+    top: 100%;
+    animation: accessText 1000ms 1;
+    animation-delay: 200ms;
+    animation-fill-mode: forwards;
+    margin: 0;
+    font-weight: 900;
+  }
+  
+  @keyframes accessText {
+    0% {
+      font-size: 0;
+      color: transparent;
+    }
+    100% {
+      font-size: 2vw;
+      color: rgb(255, 255, 255);
+    }
+  
+  }
+  
+  .blinking {
+  animation: greenBlink 600ms 4;
+  animation-delay: 400ms;
+  animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes greenBlink {
+  0% {color: white; 
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+  100% {color: rgb(6, 214, 6);
+    text-shadow: -1px 0 rgb(6, 214, 6), 0 1px rgb(6, 214, 6), 1px 0 rgb(6, 214, 6), 0 -1px rgb(6, 214, 6);
+    }
+  }
+  
+  button {
+    z-index: 100;
+    animation: button 160ms 1;
+    animation-timing-function: ease-in;
+    position: absolute; /* Change to relative positioning */
+    background-color: white;
+    color: black;
+    width: 2.5vw;
+    height: 2.5vw;
+    padding: 10px;
+    font-size: 16px;
+    top: 0; /* Remove top positioning */
+    right: 50%;
+    left: 50%; /* Position button at horizontal center */
+    transform: translateX(-50%, -50%); /* Center button horizontally */
+    border: none;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 0 3px black, 0 0 0 4px white;
+    background-image: url('images/ninja_icon.png');
+    background-size: cover;
+    background-position: center;
+    transform-origin: center bottom;
+  }
+  
+  #buttonContainer {
+    position: relative;
+    height: 20vw;
+    width: 30vw;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #buttonText {
+    position: relative;
+    top: 2vw;
+    font-size: 1vw;
+    height: 10vw;
+    width: 20vw;
+    color: rgba(0, 0, 0, 0);
+    font-family: 'Seven Segment', sans-serif;
+    text-align: center;
+
+  
+  }
+  
+  @keyframes button {
+    0% {transform-origin: center top;
+      transform: perspective(0.8rem) rotateX(-20deg);
+      /* right: 44%; */
+      opacity: 0%;
+    }
+  
+    100% {
+      transform-origin: center bottom;
+      /* right: 38%; */
+      opacity: 100%;
+    }
+  }
+  
+   .loading {
+    z-index: 100;
+    position: fixed;
+    top: 1.5vw;
+    width: 17vw;
+    height: auto;
+    aspect-ratio: 271 / 70;
+    font-family: 'Seven Segment', sans-serif;
+    text-align: center;
+    background: url('images/Loading_frame/Vector.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  }
+  
+  
+  .loading h2, h3{
+    z-index: 100;
+    margin: 0;
+    position: relative;
+    font-size: 2.2vw;
     color: white;
     text-shadow: 
           -1px -1px 0 #000,  
