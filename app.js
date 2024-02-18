@@ -88,6 +88,40 @@ window.onload = function() {
       
   }
   
+  ////////rotate background
+  function updateBackgroundVideo() {
+    const video = document.getElementById('background-video');
+    const source = document.getElementById('video-source');
+    const isLandscape = window.innerWidth > window.innerHeight;
+  
+    if (isLandscape) {
+      source.src = 'video/space.mp4'; // Path to landscape video
+    } else {
+      source.src = 'video/space_portrait.mp4'; // Path to portrait video
+    }
+  
+    video.load(); // Reload the video element to apply the new source
+  }
+  
+  // Initial call to update background video on page load
+  updateBackgroundVideo();
+  
+  // Event listener for window resize to update background video when viewport dimensions change
+  window.addEventListener('resize', updateBackgroundVideo);
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 // TYPING ANIMATION 
@@ -135,3 +169,23 @@ setTimeout(() => {
     element.classList.add('blinking');
   });
 }, 400);
+
+function updateBackgroundVideo() {
+  const video = document.getElementById('background-video');
+  const source = document.getElementById('video-source');
+  const isLandscape = window.innerWidth > window.innerHeight;
+
+  if (isLandscape) {
+    source.src = 'video/space.mp4'; // Path to landscape video
+  } else {
+    source.src = 'video/space_portrait.mp4'; // Path to portrait video
+  }
+
+  video.load(); // Reload the video element to apply the new source
+}
+
+// Initial call to update background video on page load
+updateBackgroundVideo();
+
+// Event listener for window resize to update background video when viewport dimensions change
+window.addEventListener('resize', updateBackgroundVideo);
