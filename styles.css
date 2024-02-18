@@ -342,7 +342,7 @@ button {
     }
   
     100% {
-      width: 50vw;
+      width: 47vw;
       height: 21vw;
       opacity: 100%;
     }
@@ -362,7 +362,7 @@ button {
   }
   
   .access a2 {
-    padding-left: 2vw;
+    /*padding-left: 2vw;*/
     z-index: 100;
     font-family: 'Space Mono', monospace;
     font-size: 0;
