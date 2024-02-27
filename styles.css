@@ -97,7 +97,7 @@ header {
 }
 
 .about {
-  position: relative;
+  position: sticky;
   width: 94vw;
   background-color: rgba(0, 0, 0, 0.119);
   backdrop-filter: blur(2px);
@@ -197,4 +197,57 @@ header {
 
 .lines img {
   width: 30%;
+}
+
+.skills {
+  margin-top: 18vh;
+}
+
+.skills h1 {
+  font-size: 6vw;
+  text-align: center;
+}
+
+.fed {
+  position: relative;
+  width: 69vw;
+  height: auto;
+  align-items: 1 / 1;
+  background-color: rgba(0, 0, 0, 0.119);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  align-items: stretch;
+  margin-top: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  flex-direction: column;
+}
+
+.fed h1 {
+  color: white;
+  padding: 1vh 0 1vh 0;
+  font-size: 4vw;
+}
+
+.im {
+  padding: 1vh 0vh 1vh 0vh;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.119);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: vh;
+}
+
+.im img {
+  width: 20vw;
+  height: auto; /* Ensure images are square */
+  box-sizing: border-box; /* Include padding in width and height calculation */
 }
