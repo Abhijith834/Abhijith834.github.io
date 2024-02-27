@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Geo", sans-serif;
+  background-image: url("images/cef808b3-3a16-4b90-bb21-aa892eaa18b2.gif");
+  background-size: cover;
+}
+
+#backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120vw;
+  height: 120vh;
+  z-index: -100; /* Ensure it stays behind other content */
+  object-fit: cover;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  top: 6vh;
+  background-color: rgba(red, green, blue, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  width: 82vw;
+  height: 8.5vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  border-radius: 60px;
+  font-size: 3.7vw;
+  font-weight: lighter;
+}
+
+.navbar a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro {
+  /* position: absolute; */
+  margin-top: 10vh;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.intro h1,
+.intro h2 {
+  text-align: center;
+  width: 100%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: normal;
+}
+
+.intro h1 {
+  font-size: 8vw;
+}
+
+.intro h2 {
+  padding-top: 20px;
+  font-size: 4vw;
+  width: 80vw;
+}
+
+.about {
+  position: relative;
+  width: 94vw;
+  background-color: rgba(0, 0, 0, 0.119);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  text-align: center;
+  display: flex; /* Flexbox to position elements side by side */
+  justify-content: start; /* Align items to the start */
+  align-items: stretch; /* Stretch items to fill the container */
+  margin-top: 2vh;
+  /* right: 50%; */
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+}
+
+.about h1,
+.acontent {
+  flex: 1; /* Allows both h1 and acontent to expand */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.about h1 {
+  font-size: 6vw;
+  color: white;
+  font-weight: lighter;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  flex: 0 1 auto; /* Do not allow h1 to grow */
+  white-space: nowrap;
+  padding: 7px;
+}
+
+.acontent {
+  flex: 1; /* Takes up the remaining space, adjusted for 80% */
+  background-color: rgba(0, 0, 0, 0.634); /* Darker semi-transparent overlay */
+  backdrop-filter: blur(10px); /* Increased blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Increased blur effect for Safari */
+  justify-content: start; /* Align text to the start */
+  border-radius: 30px;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center;
+  padding: 20px 20px 15px 15px;
+}
+
+.acontent p {
+  font-size: 5.3vw;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  /* padding: 10px; */
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2vh;
+  width: 90vw;
+  color: white;
+  text-align: center;
+  font-size: 3.8vw;
+  font-weight: lighter;
+}
+
+.quote h3 {
+  align-self: flex-end; /* Align h3 to the flex end (bottom-right corner) */
+  margin-top: 0.01vh; /* Add margin to separate h3 from h2 */
+}
