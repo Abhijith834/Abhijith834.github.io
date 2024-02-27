@@ -25,6 +25,7 @@ header {
   transform-style: preserve-3d;
   z-index: -1;
 }
+
 #backgroundVideo {
   top: 0;
   /* left: 50%; */
@@ -45,7 +46,7 @@ header {
   justify-content: space-around;
   align-items: center;
   top: 6vh;
-  background-color: rgba(red, green, blue, 0.5);
+  background-color: rgba(0, 0, 0, 0.119);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 1rem 0;
