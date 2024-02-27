@@ -9,18 +9,34 @@ body {
   background-image: url("images/cef808b3-3a16-4b90-bb21-aa892eaa18b2.gif");
   background-size: cover;
 }
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 1000px;
+}
 
+header {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
 #backgroundVideo {
-  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
   width: 120vw;
   height: 120vh;
   z-index: -100; /* Ensure it stays behind other content */
   object-fit: cover;
   align-items: center;
   background-repeat: no-repeat;
+  transform: translateZ(-10000px) scale(12);
+  z-index: -1;
 }
 
 .navbar {
@@ -155,4 +171,29 @@ body {
 .quote h3 {
   align-self: flex-end; /* Align h3 to the flex end (bottom-right corner) */
   margin-top: 0.01vh; /* Add margin to separate h3 from h2 */
+}
+
+.lines {
+  position: absolute;
+  padding-top: 6vh;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90vw;
+  flex-direction: row;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+}
+
+#leftImage {
+  left: 2vw;
+}
+
+#rightImage {
+  right: 2vw;
+}
+
+.lines img {
+  width: 30%;
 }
