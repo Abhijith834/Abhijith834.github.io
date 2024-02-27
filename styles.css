@@ -6,8 +6,8 @@
 
 body {
   font-family: "Geo", sans-serif;
-  background-image: url("images/cef808b3-3a16-4b90-bb21-aa892eaa18b2.gif");
-  background-size: cover;
+  /* background-image: url("images/cef808b3-3a16-4b90-bb21-aa892eaa18b2.gif");
+  background-size: cover; */
 }
 .wrapper {
   height: 100vh;
@@ -30,13 +30,13 @@ header {
   top: 0;
   /* left: 50%; */
   /* transform: translateX(-50%); */
-  width: 120vw;
-  height: 120vh;
+  width: 100%;
+  height: 100%;
   z-index: -100; /* Ensure it stays behind other content */
   object-fit: cover;
   align-items: center;
   background-repeat: no-repeat;
-  transform: translateZ(-10000px) scale(12);
+  transform: translateZ(-5000px) scale(7);
   z-index: -1;
 }
 
@@ -175,7 +175,8 @@ header {
 }
 
 .lines {
-  position: absolute;
+  position: sticky;
+  top: -4.7vh;
   padding-top: 6vh;
   display: flex;
   justify-content: space-between;
@@ -185,6 +186,17 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
+  opacity: 0;
+  animation: lines linear forwards;
+  animation-timeline: view();
+  animation-range-start: 1vh;
+  animation-range-end: 120vh;
+}
+
+@keyframes lines {
+  to {
+    opacity: 1;
+  }
 }
 
 #leftImage {
@@ -197,15 +209,20 @@ header {
 
 .lines img {
   width: 30%;
+  height: 97vh;
 }
 
 .skills {
-  margin-top: 18vh;
+  margin-top: -90vh;
+  /* background-color: black; */
 }
 
-.skills h1 {
+.skills h3 {
+  position: sticky;
+  top: 12vh;
   font-size: 6vw;
   text-align: center;
+  z-index: 20;
 }
 
 .fed {
@@ -243,11 +260,42 @@ header {
   flex-wrap: wrap;
   justify-content: center; /* Center items horizontally */
   align-items: center; /* Center items vertically */
-  gap: vh;
+  gap: 3vh;
 }
 
 .im img {
   width: 20vw;
   height: auto; /* Ensure images are square */
   box-sizing: border-box; /* Include padding in width and height calculation */
+}
+
+.im1 {
+  padding: 2vh 0vh 2vh 0vh;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.119);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 3vh;
+}
+
+.im1 img {
+  width: 17vw;
+  height: auto; /* Ensure images are square */
+  box-sizing: border-box; /* Include padding in width and height calculation */
+}
+
+.footer {
+  position: sticky;
+  bottom: -26vh;
+  margin-top: 3vh;
+  /* margin-top: 10vh; */
+  width: 100%;
+  height: 20vh;
+  color: black;
+  background-color: black;
+  z-index: 200;
 }
