@@ -1,3 +1,5 @@
+/* @import url("https://fonts.cdnfonts.com/css/grenze"); */
+
 * {
   margin: 0;
   padding: 0;
@@ -24,10 +26,10 @@ header {
 }
 
 #backgroundVideo {
-  margin-top: 85%;
+  margin-top: 100%;
   top: 0;
   width: 100%;
-  height: 140%;
+  height: 150%;
   object-fit: cover;
   align-items: center;
   background-repeat: no-repeat;
@@ -174,7 +176,7 @@ header {
   margin: auto;
   width: 90vw;
   flex-direction: row;
-  z-index: 50;
+  z-index: 2;
   opacity: 0;
   animation: lines linear forwards;
   animation-timeline: view();
@@ -277,49 +279,108 @@ header {
 }
 
 .footer {
+  margin-top: 3vh;
   color: white;
-  background-color: black;
-  height: 20vh;
+  z-index: 5;
 }
 
 .footer-grid {
+  height: 18vh;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* Adjust the ratio according to your design */
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: black;
+  padding-bottom: 3vh;
+}
+
+.footer-title h2 {
+  padding-top: 5px;
+  font-size: 3.8vw;
+}
+
+.footer-row-1,
+.footer-row-2 {
+  margin-top: 26%;
   align-items: center;
-  justify-items: center;
-  text-align: center;
 }
 
-.footer-heading {
-  grid-column: 1;
+.footer-row-1 {
+  display: grid;
 }
 
-.footer-links {
-  grid-column: 2;
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Adjust the space between links as needed */
-}
-
-.footer-cv {
-  grid-column: 3;
-}
-
-/* Additional styling for links if needed */
-.footer-links a,
-.footer-cv a {
+.footer-row-1 a,
+.footer-row-2 a {
+  width: 2vh;
+  color: white;
   text-decoration: none;
-  color: white; /* Change as per your color scheme */
+  padding-left: 2vw;
+  width: fit-content;
+  font-size: 4.7vw;
 }
 
-/* Responsive adjustments if needed */
-@media (max-width: 768px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-  }
-  .footer-links,
-  .footer-cv {
-    justify-content: center;
-  }
+.square {
+  height: 5px;
+  width: 5px;
+  background-color: white;
+}
+
+.footer-grid1 {
+  height: 18vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border: 20px white;
+  background-color: black;
+  border-top: 1px solid gray;
+}
+
+.footer-title {
+  font-size: 3vw;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.footer-title h2 {
+  padding-top: 5px;
+}
+
+.footer-content {
+  width: 2vh;
+  color: white;
+  text-decoration: none;
+  padding-left: 2vw;
+  width: fit-content;
+  margin-top: 13%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-content a {
+  width: 2vh;
+  color: white;
+  text-decoration: none;
+  width: fit-content;
+  font-size: 4.7vw;
+}
+
+.footer-content a:first-child {
+  color: grey;
+}
+
+.footer-content h2 {
+  font-size: 3.7vw;
+  color: grey;
+}
+
+.gif img {
+  width: 26vw;
+  height: auto;
+  bottom: 0;
+  padding-left: 4vw;
+  margin-bottom: -16.5vh;
+}
+
+.footer-content img {
+  width: 41vw;
+  height: auto;
+  margin-left: 11vw;
+  opacity: 0.88;
 }
