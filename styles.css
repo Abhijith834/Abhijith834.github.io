@@ -23,10 +23,11 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -10;
+  /* transform: scale(2); */
 }
 
 #backgroundVideo {
-  margin-top: calc(65% + 25vh);
+  margin-top: calc(60% + 25vh);
   top: 0;
   width: 100%;
   height: calc(100% + 64vh);
