@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <script async src="app.js"></script>
     <link href="https://fonts.cdnfonts.com/css/geo" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/grenze" rel="stylesheet">
 </head>
