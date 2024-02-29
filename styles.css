@@ -26,10 +26,10 @@ header {
 }
 
 #backgroundVideo {
-  margin-top: calc(60% + 25vh);
+  margin-top: calc(65% + 25vh);
   top: 0;
   width: 100%;
-  height: calc(100% + 60vh);
+  height: calc(100% + 64vh);
   object-fit: cover;
   align-items: center;
   background-repeat: no-repeat;
