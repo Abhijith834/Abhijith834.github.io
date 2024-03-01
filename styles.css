@@ -316,6 +316,7 @@ header {
   border: 20px white;
   background-color: black;
   border-top: 1px solid gray;
+  margin: 0;
 }
 
 .footer-title {
