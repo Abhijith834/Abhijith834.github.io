@@ -23,9 +23,33 @@
 
 
 
-document.addEventListener("scroll", function() {
-    var scrollPosition = window.pageYOffset;
-    var backgroundVideo = document.getElementById('backgroundVideo');
-    // Adjust this value for slower movement
-    backgroundVideo.style.transform = 'translateY(' + scrollPosition * 0.70 + 'px)';
+  let lastKnownScrollPosition = 0;
+  let ticking = false;
+  
+  function doSomething(scrollPos) {
+    const windowHeight = window.innerHeight;
+  
+    // Keep the parallax speed factor positive for clarity
+    const parallaxSpeedFactor = 0.1; // Adjust this value as needed for the desired effect
+    
+    // Invert the direction of movement by subtracting the calculated offset
+    const offset = -scrollPos * parallaxSpeedFactor; // Change here
+  
+    const backgroundVideo = document.getElementById('backgroundVideo');
+    // Apply the offset with the correct direction for the parallax effect
+    backgroundVideo.style.transform = `translateY(${offset}px)`;
+  }
+  
+  document.addEventListener("scroll", function() {
+    lastKnownScrollPosition = window.pageYOffset;
+  
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        doSomething(lastKnownScrollPosition);
+        ticking = false;
+      });
+  
+      ticking = true;
+    }
   });
+  
