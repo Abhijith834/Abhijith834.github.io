@@ -263,6 +263,7 @@ header {
   width: 100%;
   transition: bottom 0.5s ease-out; /* Smooth transition for the popup effect */
   z-index: 50; /* Ensure it's above other content */
+  color: white;
 }
 
 .footer-popup {
