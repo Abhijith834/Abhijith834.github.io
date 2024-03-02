@@ -65,7 +65,7 @@ document.addEventListener('scroll', () => {
   const footer = document.querySelector('.footer');
 
   // Check if the user has reached the bottom of the page
-  if (!bottomReached && scrollHeight - scrollPosition <= 5) {
+  if (!bottomReached && scrollHeight - scrollPosition <= 50) {
     bottomReached = true;
   } else if (bottomReached && !footerVisible && lastScroll < scrollPosition) {
     // Show the footer only if it's not already visible and we're scrolling down after reaching the bottom
