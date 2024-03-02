@@ -42,21 +42,39 @@ header {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 1rem 0;
-  width: 82vw;
-  height: 8.5vw;
+  width: 84vw;
+  height: 9vw;
   left: 50%;
   transform: translateX(-50%);
+  /* margin-left: 9vw; */
+  transform-origin: center;
   z-index: 100;
   border-radius: 60px;
-  font-size: 3.7vw;
+  font-size: 3.8vw;
   font-weight: lighter;
+  animation: navexpand 0.9s;
 }
 
 .navbar a {
   color: black;
   text-decoration: none;
-  margin: 0 15px;
+  /* margin: 0 15px; */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes navexpand {
+  from {
+    /* left: 0%; */
+    opacity: 0.9;
+    width: 2vw;
+    font-size: 0.1vw;
+  }
+
+  to {
+    opacity: 1;
+    width: 84vw;
+    font-size: 3.8vw;
+  }
 }
 
 .intro {
@@ -79,67 +97,112 @@ header {
 
 .intro h1 {
   font-size: 8vw;
+  animation: fade-down 0.3s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
 .intro h2 {
-  padding-top: 20px;
+  padding-top: 2vh;
   font-size: 4vw;
   width: 80vw;
+  animation: fade-down 0.3s ease-in-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+@keyframes fade-down {
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 
 .about {
-  position: sticky;
+  position: relative;
   width: 94vw;
-  background-color: rgba(0, 0, 0, 0.119);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
   text-align: center;
   display: flex;
-  justify-content: start;
+  flex-direction: row;
   align-items: stretch;
-  margin-top: 2vh;
-  margin: auto;
+  margin-top: 1.7vh;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 30px;
+  animation: blur 1.5s forwards;
+  animation-delay: 0.6s;
+  height: fit-content;
 }
 
-.about h1,
-.acontent {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@keyframes blur {
+  from {
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
 
+  to {
+    background-color: rgba(0, 0, 0, 0.119);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}
 .about h1 {
-  font-size: 6vw;
+  position: relative;
   color: white;
   font-weight: lighter;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  flex: 0 1 auto;
   white-space: nowrap;
-  padding: 7px;
+  margin-top: 50%;
+  margin-bottom: 50%;
+  font-size: 6vw;
+  animation: hleft 0.7s forwards;
+  animation-delay: 0.5s;
+  right: -50%;
+  opacity: 0;
+}
+
+@keyframes hleft {
+  to {
+    opacity: 1;
+    font-size: 6vw;
+    right: 0;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
 }
 
 .acontent {
-  flex: 1; /* Takes up the remaining space, adjusted for 80% */
-  background-color: rgba(0, 0, 0, 0.634); /* Darker semi-transparent overlay */
-  backdrop-filter: blur(10px); /* Increased blur effect */
-  -webkit-backdrop-filter: blur(10px); /* Increased blur effect for Safari */
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.634);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   justify-content: start;
   border-radius: 30px;
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px 20px 15px 15px;
+  font-size: 6vw;
+  width: 69vw;
+  right: -100vw;
+  animation: pushleft 0.7s forwards;
+  animation-delay: 0.4s;
 }
 
 .acontent p {
-  font-size: 5.3vw;
   color: white;
   font-weight: normal;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0;
+}
+
+@keyframes pushleft {
+  to {
+    right: 0%;
+  }
 }
 
 .quote {
@@ -151,7 +214,7 @@ header {
   transform: translateX(-50%);
   margin-top: 2vh;
   width: 90vw;
-  color: white;
+  color: transparent;
   text-align: center;
   font-size: 3.8vw;
   font-weight: lighter;
@@ -160,6 +223,25 @@ header {
 .quote h3 {
   align-self: flex-end;
   margin-top: 0.01vh;
+}
+
+.quote h2,
+.quote h3 {
+  animation: fade-up 1s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    color: white;
+    transform: translateY(0);
+  }
 }
 
 .lines {
