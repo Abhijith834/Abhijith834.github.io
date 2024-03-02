@@ -24,7 +24,7 @@ header {
 
 #backgroundVideo {
   width: 100%;
-  height: 152vh; /* Set initial height to full viewport height */
+  height: 155vh; /* Set initial height to full viewport height */
   object-fit: cover;
   position: fixed; /* Keep it fixed to cover the screen */
   top: 0;
