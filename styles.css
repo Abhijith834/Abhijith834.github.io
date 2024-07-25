@@ -24,9 +24,12 @@ header {
 
 #backgroundVideo {
   width: 100%;
-  height: 155vh; /* Set initial height to full viewport height */
+  height: 180vh;
+  margin-top: -10vh;
+  /* Set initial height to full viewport height */
   object-fit: cover;
-  position: fixed; /* Keep it fixed to cover the screen */
+  position: fixed;
+  /* Keep it fixed to cover the screen */
   top: 0;
   left: 0;
   z-index: -1;
@@ -148,6 +151,7 @@ header {
     -webkit-backdrop-filter: blur(2px);
   }
 }
+
 .about h1 {
   position: relative;
   color: white;
@@ -341,15 +345,19 @@ header {
 .footer {
   position: fixed;
   left: 0;
-  bottom: -100%; /* Start off-screen */
+  bottom: -100%;
+  /* Start off-screen */
   width: 100%;
-  transition: bottom 0.5s ease-out; /* Smooth transition for the popup effect */
-  z-index: 50; /* Ensure it's above other content */
+  transition: bottom 0.5s ease-out;
+  /* Smooth transition for the popup effect */
+  z-index: 50;
+  /* Ensure it's above other content */
   color: white;
 }
 
 .footer-popup {
-  animation: slideUp 0.5s ease forwards; /* Adjust the timing as needed */
+  animation: slideUp 0.5s ease forwards;
+  /* Adjust the timing as needed */
 }
 
 .footer-grid {
@@ -597,6 +605,7 @@ header {
     margin-top: 10%;
     align-items: center;
   }
+
   .footer-row-1 a,
   .footer-row-2 a {
     width: 2vh;
@@ -813,6 +822,7 @@ header {
     margin-top: 10%;
     align-items: center;
   }
+
   .footer-row-1 a,
   .footer-row-2 a {
     width: 2vh;
